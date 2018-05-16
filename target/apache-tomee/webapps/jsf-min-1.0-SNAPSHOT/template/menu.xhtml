@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017 Daimler AG. All rights reserved.
+  ~ Implemented 2017 by DCCS GmbH.
+  -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+
+
+<p:menu styleClass="menu" toggleable="true">
+  <p:menuitem value="#{msgs.start}" url="index.xhtml"/>
+  <p:submenu label="#{msgs.machineLearning}">
+
+    <p:menuitem value="#{msgs.example1}" url="allCertificates.xhtml"/>
+    <p:menuitem value="#{msgs.example2}" url="testSupplierLookup.xhtml"/>
+    <p:menuitem value="#{msgs.example3}" url="testUserLookup.xhtml"/>
+
+  </p:submenu>
+</p:menu>
+
+</html>

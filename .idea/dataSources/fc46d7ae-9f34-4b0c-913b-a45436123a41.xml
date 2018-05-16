@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="tus02 tamara">
+  <database-model serializer="dbm" rdbms="ORACLE" format-version="4.8">
+    <root id="1">
+      <ServerVersion>12.1.0.2</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="TAMARA">
+      <ObjectId>189</ObjectId>
+      <IntrospectionTimestamp>2018-05-16.14:22:29</IntrospectionTimestamp>
+      <CreatedTimestamp>2018-04-30.14:34:20</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-16.14:22:24</ModifiedTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="PUBLIC">
+      <ObjectId>1</ObjectId>
+    </schema>
+    <schema id="4" parent="1" name="SYS">
+      <ObjectId>0</ObjectId>
+    </schema>
+    <schema id="5" parent="1" name="SYSTEM">
+      <ObjectId>5</ObjectId>
+    </schema>
+    <schema id="6" parent="1" name="OUTLN">
+      <ObjectId>9</ObjectId>
+    </schema>
+    <schema id="7" parent="1" name="DIP">
+      <ObjectId>14</ObjectId>
+    </schema>
+    <schema id="8" parent="1" name="ORACLE_OCM">
+      <ObjectId>21</ObjectId>
+    </schema>
+    <schema id="9" parent="1" name="DBSNMP">
+      <ObjectId>30</ObjectId>
+    </schema>
+    <schema id="10" parent="1" name="APPQOSSYS">
+      <ObjectId>31</ObjectId>
+    </schema>
+    <schema id="11" parent="1" name="WMSYS">
+      <ObjectId>32</ObjectId>
+    </schema>
+    <schema id="12" parent="1" name="XDB">
+      <ObjectId>43</ObjectId>
+    </schema>
+    <schema id="13" parent="1" name="ANONYMOUS">
+      <ObjectId>44</ObjectId>
+    </schema>
+    <schema id="14" parent="1" name="ORDSYS">
+      <ObjectId>51</ObjectId>
+    </schema>
+    <schema id="15" parent="1" name="ORDDATA">
+      <ObjectId>52</ObjectId>
+    </schema>
+    <schema id="16" parent="1" name="ORDPLUGINS">
+      <ObjectId>53</ObjectId>
+    </schema>
+    <schema id="17" parent="1" name="SI_INFORMTN_SCHEMA">
+      <ObjectId>54</ObjectId>
+    </schema>
+    <schema id="18" parent="1" name="MDSYS">
+      <ObjectId>55</ObjectId>
+    </schema>
+    <schema id="19" parent="1" name="MDDATA">
+      <ObjectId>57</ObjectId>
+    </schema>
+    <schema id="20" parent="1" name="FLOWS_FILES">
+      <ObjectId>64</ObjectId>
+    </schema>
+    <schema id="21" parent="1" name="APEX_PUBLIC_USER">
+      <ObjectId>65</ObjectId>
+    </schema>
+    <schema id="22" parent="1" name="APEX_030200">
+      <ObjectId>67</ObjectId>
+    </schema>
+    <schema id="23" parent="1" name="SSTREAD">
+      <ObjectId>92</ObjectId>
+    </schema>
+    <schema id="24" parent="1" name="ZCJCMAPS">
+      <ObjectId>93</ObjectId>
+    </schema>
+    <schema id="25" parent="1" name="ZCJCMPSE">
+      <ObjectId>94</ObjectId>
+    </schema>
+    <schema id="26" parent="1" name="ZCJCMPSI">
+      <ObjectId>95</ObjectId>
+    </schema>
+    <schema id="27" parent="1" name="ZCJCMPSO">
+      <ObjectId>96</ObjectId>
+    </schema>
+    <schema id="28" parent="1" name="ZCJCMPSR">
+      <ObjectId>97</ObjectId>
+    </schema>
+    <schema id="29" parent="1" name="DIALOG">
+      <ObjectId>98</ObjectId>
+    </schema>
+    <schema id="30" parent="1" name="PROCON">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="31" parent="1" name="CHANGE">
+      <ObjectId>100</ObjectId>
+    </schema>
+    <schema id="32" parent="1" name="ZCBCCORE">
+      <ObjectId>101</ObjectId>
+    </schema>
+    <schema id="33" parent="1" name="ZCBCDIAL">
+      <ObjectId>102</ObjectId>
+    </schema>
+    <schema id="34" parent="1" name="ZCBC1ST1">
+      <ObjectId>103</ObjectId>
+    </schema>
+    <schema id="35" parent="1" name="ZCBCCOST">
+      <ObjectId>104</ObjectId>
+    </schema>
+    <schema id="36" parent="1" name="ZCBCSRMN">
+      <ObjectId>105</ObjectId>
+    </schema>
+    <schema id="37" parent="1" name="ZCBCECM">
+      <ObjectId>106</ObjectId>
+    </schema>
+    <schema id="38" parent="1" name="ZCBCFERR">
+      <ObjectId>107</ObjectId>
+    </schema>
+    <schema id="39" parent="1" name="ZCBCAGA">
+      <ObjectId>108</ObjectId>
+    </schema>
+    <schema id="40" parent="1" name="ZCBCREID">
+      <ObjectId>109</ObjectId>
+    </schema>
+    <schema id="41" parent="1" name="ZCBCISAF">
+      <ObjectId>110</ObjectId>
+    </schema>
+    <schema id="42" parent="1" name="ZCBCTODO">
+      <ObjectId>111</ObjectId>
+    </schema>
+    <schema id="43" parent="1" name="ZCBCCERT">
+      <ObjectId>112</ObjectId>
+    </schema>
+    <schema id="44" parent="1" name="ZCBCCSIM">
+      <ObjectId>113</ObjectId>
+    </schema>
+    <schema id="45" parent="1" name="ZCBCPATE">
+      <ObjectId>114</ObjectId>
+    </schema>
+    <schema id="46" parent="1" name="SPEEDYSEARCH">
+      <ObjectId>115</ObjectId>
+    </schema>
+    <schema id="47" parent="1" name="ZCBCDEV">
+      <ObjectId>117</ObjectId>
+    </schema>
+    <schema id="48" parent="1" name="ZCBCPNOC">
+      <ObjectId>122</ObjectId>
+    </schema>
+    <schema id="49" parent="1" name="S_CAREER">
+      <ObjectId>130</ObjectId>
+    </schema>
+    <schema id="50" parent="1" name="AUDSYS">
+      <ObjectId>150</ObjectId>
+    </schema>
+    <schema id="51" parent="1" name="GSMADMIN_INTERNAL">
+      <ObjectId>151</ObjectId>
+    </schema>
+    <schema id="52" parent="1" name="GSMUSER">
+      <ObjectId>155</ObjectId>
+    </schema>
+    <schema id="53" parent="1" name="GSMCATUSER">
+      <ObjectId>168</ObjectId>
+    </schema>
+    <schema id="54" parent="1" name="OJVMSYS">
+      <ObjectId>169</ObjectId>
+    </schema>
+    <schema id="55" parent="1" name="SPATIAL_WFS_ADMIN_USR">
+      <ObjectId>170</ObjectId>
+    </schema>
+    <schema id="56" parent="1" name="SPATIAL_CSW_ADMIN_USR">
+      <ObjectId>171</ObjectId>
+    </schema>
+    <schema id="57" parent="1" name="APEX_040200">
+      <ObjectId>173</ObjectId>
+    </schema>
+    <schema id="58" parent="1" name="ZCBCBEYE">
+      <ObjectId>174</ObjectId>
+    </schema>
+    <schema id="59" parent="1" name="ADMIR">
+      <ObjectId>175</ObjectId>
+    </schema>
+    <schema id="60" parent="1" name="DCCSTECH">
+      <ObjectId>183</ObjectId>
+    </schema>
+    <schema id="61" parent="1" name="DAI_ADMIN">
+      <ObjectId>185</ObjectId>
+    </schema>
+    <schema id="62" parent="1" name="EROL">
+      <ObjectId>190</ObjectId>
+    </schema>
+    <schema id="63" parent="1" name="SYSBACKUP">
+      <ObjectId>2147483617</ObjectId>
+    </schema>
+    <schema id="64" parent="1" name="SYSDG">
+      <ObjectId>2147483618</ObjectId>
+    </schema>
+    <schema id="65" parent="1" name="SYSKM">
+      <ObjectId>2147483619</ObjectId>
+    </schema>
+    <schema id="66" parent="1" name="XS$NULL">
+      <ObjectId>2147483638</ObjectId>
+    </schema>
+    <schema id="67" parent="1" name="ZCBCFALCON">
+      <ObjectId>191</ObjectId>
+    </schema>
+    <sequence id="68" parent="2" name="CERTIFICATETYPE_SEQ">
+      <ObjectId>249924</ObjectId>
+      <CreatedTimestamp>2018-05-07.01:58:59</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-07.01:58:59</ModifiedTimestamp>
+      <SequenceIdentity>1..99999999</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="69" parent="2" name="CERTIFICATE_SEQ">
+      <ObjectId>249028</ObjectId>
+      <CreatedTimestamp>2018-04-30.18:14:18</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-16.13:55:16</ModifiedTimestamp>
+      <SequenceIdentity>1..99999999</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="70" parent="2" name="COMMENT_SEQ">
+      <ObjectId>249445</ObjectId>
+      <CreatedTimestamp>2018-05-03.11:13:34</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-03.11:13:34</ModifiedTimestamp>
+      <SequenceIdentity>1..99999999</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="71" parent="2" name="DEPARTMENT_SEQ">
+      <ObjectId>249019</ObjectId>
+      <CreatedTimestamp>2018-04-30.14:39:36</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.14:39:36</ModifiedTimestamp>
+      <SequenceIdentity>1..99999999</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="72" parent="2" name="SUPPLIER_SEQ">
+      <ObjectId>249025</ObjectId>
+      <CreatedTimestamp>2018-04-30.17:19:16</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.17:19:16</ModifiedTimestamp>
+      <SequenceIdentity>1..99999999</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <sequence id="73" parent="2" name="USER_SEQ">
+      <ObjectId>249022</ObjectId>
+      <CreatedTimestamp>2018-04-30.16:03:42</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.16:03:42</ModifiedTimestamp>
+      <SequenceIdentity>1..99999999</SequenceIdentity>
+      <CacheSize>-2147483648</CacheSize>
+    </sequence>
+    <table id="74" parent="2" name="CERTIFICATE">
+      <ObjectId>249026</ObjectId>
+      <CreatedTimestamp>2018-04-30.18:10:25</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.18:10:25</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="75" parent="2" name="CERTIFICATETYPE">
+      <ObjectId>249922</ObjectId>
+      <CreatedTimestamp>2018-05-07.01:57:46</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-07.01:57:46</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="76" parent="2" name="CERTIFICATEUSER">
+      <ObjectId>250189</ObjectId>
+      <CreatedTimestamp>2018-05-08.16:28:10</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-16.14:22:24</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="77" parent="2" name="COMMENTDATA">
+      <ObjectId>250187</ObjectId>
+      <CreatedTimestamp>2018-05-08.13:56:46</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-14.10:54:28</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="78" parent="2" name="DEPARTMENT">
+      <ObjectId>249017</ObjectId>
+      <CreatedTimestamp>2018-04-30.14:34:20</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.14:34:20</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="79" parent="2" name="OPENJPA_SEQUENCE_TABLE">
+      <ObjectId>249590</ObjectId>
+      <CreatedTimestamp>2018-05-04.12:27:55</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-04.12:27:55</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="80" parent="2" name="PARTICIPANT">
+      <ObjectId>249020</ObjectId>
+      <CreatedTimestamp>2018-04-30.16:03:19</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.16:03:19</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="81" parent="2" name="SUPPLIER">
+      <ObjectId>249023</ObjectId>
+      <CreatedTimestamp>2018-04-30.17:18:41</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.17:18:41</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <column id="82" parent="74" name="CERTIFICATEID">
+      <Position>1</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="74" name="CERTIFICATETYPE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
+    </column>
+    <column id="84" parent="74" name="SUPPLIERID">
+      <Position>3</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+    </column>
+    <column id="85" parent="74" name="VALIDFROM">
+      <Position>4</Position>
+      <DataType>DATE|0s</DataType>
+    </column>
+    <column id="86" parent="74" name="VALIDTO">
+      <Position>5</Position>
+      <DataType>DATE|0s</DataType>
+    </column>
+    <index id="87" parent="74" name="PKC_CERTIFICATE">
+      <ObjectId>249027</ObjectId>
+      <CreatedTimestamp>2018-04-30.18:10:25</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.18:10:25</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>CERTIFICATEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="88" parent="74" name="PKC_CERTIFICATE">
+      <ModifiedTimestamp>2018-04-30.18:10:25</ModifiedTimestamp>
+      <ColNames>CERTIFICATEID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PKC_CERTIFICATE</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="89" parent="74" name="FKC_CERTIFICATE_SUPPLIER">
+      <ModifiedTimestamp>2018-04-30.18:10:25</ModifiedTimestamp>
+      <ColNames>SUPPLIERID</ColNames>
+      <RefSchemaName>TAMARA</RefSchemaName>
+      <RefTableName>SUPPLIER</RefTableName>
+      <RefKeyName>PKC_SUPPLIER</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <check id="90" parent="74" name="TYPE_CHECK">
+      <ModifiedTimestamp>2018-04-30.18:10:25</ModifiedTimestamp>
+      <ColNames>CERTIFICATETYPE</ColNames>
+      <Predicate>certificateType IN(&apos;OHSAS 180001&apos;,&apos;CCC Certificate&apos;,&apos;Permission of printing&apos;)</Predicate>
+    </check>
+    <column id="91" parent="75" name="CERTIFICATETYPEID">
+      <Position>1</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="75" name="CERTIFICATETYPE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
+    </column>
+    <index id="93" parent="75" name="PKC_CERTIFICATETYPE">
+      <ObjectId>249923</ObjectId>
+      <CreatedTimestamp>2018-05-07.01:57:46</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-07.01:57:46</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>CERTIFICATETYPEID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="94" parent="75" name="PKC_CERTIFICATETYPE">
+      <ModifiedTimestamp>2018-05-07.01:57:46</ModifiedTimestamp>
+      <ColNames>CERTIFICATETYPEID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PKC_CERTIFICATETYPE</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="95" parent="76" name="CERTIFICATEID">
+      <Position>1</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="96" parent="76" name="USERID">
+      <Position>2</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="97" parent="76" name="PKC_CERTIFICATEUSER">
+      <ObjectId>250190</ObjectId>
+      <CreatedTimestamp>2018-05-08.16:28:10</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-08.16:28:10</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>CERTIFICATEID
+USERID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="98" parent="76" name="PKC_CERTIFICATEUSER">
+      <ModifiedTimestamp>2018-05-08.16:28:10</ModifiedTimestamp>
+      <ColNames>CERTIFICATEID
+USERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PKC_CERTIFICATEUSER</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="99" parent="76" name="FK_CERTIFICATEUSER2">
+      <ModifiedTimestamp>2018-05-16.14:22:24</ModifiedTimestamp>
+      <ColNames>CERTIFICATEID</ColNames>
+      <RefSchemaName>TAMARA</RefSchemaName>
+      <RefTableName>CERTIFICATE</RefTableName>
+      <RefKeyName>PKC_CERTIFICATE</RefKeyName>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="100" parent="76" name="FK_CERTIFICATEUSER">
+      <ModifiedTimestamp>2018-05-14.10:52:08</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <RefSchemaName>TAMARA</RefSchemaName>
+      <RefTableName>PARTICIPANT</RefTableName>
+      <RefKeyName>PKC_USER</RefKeyName>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="101" parent="77" name="COMMENTID">
+      <Position>1</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="102" parent="77" name="PARTICIPANTID">
+      <Position>2</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="103" parent="77" name="CERTIFICATEID">
+      <Position>3</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="104" parent="77" name="COMMENTTEXT">
+      <Position>4</Position>
+      <DataType>VARCHAR2(500 byte)|0s</DataType>
+    </column>
+    <index id="105" parent="77" name="PKC_COMMENT">
+      <ObjectId>250188</ObjectId>
+      <CreatedTimestamp>2018-05-08.13:56:46</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-08.13:56:46</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>COMMENTID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="106" parent="77" name="PKC_COMMENT">
+      <ModifiedTimestamp>2018-05-08.13:56:46</ModifiedTimestamp>
+      <ColNames>COMMENTID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PKC_COMMENT</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="107" parent="77" name="FK_COMMENTUSER">
+      <ModifiedTimestamp>2018-05-14.10:54:28</ModifiedTimestamp>
+      <ColNames>PARTICIPANTID</ColNames>
+      <RefSchemaName>TAMARA</RefSchemaName>
+      <RefTableName>PARTICIPANT</RefTableName>
+      <RefKeyName>PKC_USER</RefKeyName>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="108" parent="77" name="FK_COMMENTCERTIFICATE">
+      <ModifiedTimestamp>2018-05-14.10:47:38</ModifiedTimestamp>
+      <ColNames>CERTIFICATEID</ColNames>
+      <RefSchemaName>TAMARA</RefSchemaName>
+      <RefTableName>CERTIFICATE</RefTableName>
+      <RefKeyName>PKC_CERTIFICATE</RefKeyName>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="109" parent="78" name="DEPARTMENTID">
+      <Position>1</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="78" name="DEPARTMENTNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(50 byte)|0s</DataType>
+    </column>
+    <column id="111" parent="78" name="PLANT">
+      <Position>3</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+    </column>
+    <index id="112" parent="78" name="PKC_DEPARTMENT">
+      <ObjectId>249018</ObjectId>
+      <CreatedTimestamp>2018-04-30.14:34:20</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.14:34:20</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>DEPARTMENTID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="113" parent="78" name="PKC_DEPARTMENT">
+      <ModifiedTimestamp>2018-04-30.14:34:20</ModifiedTimestamp>
+      <ColNames>DEPARTMENTID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PKC_DEPARTMENT</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="114" parent="79" name="ID">
+      <Position>1</Position>
+      <DataType>NUMBER(*)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="115" parent="79" name="SEQUENCE_VALUE">
+      <Position>2</Position>
+      <DataType>NUMBER(*)|0s</DataType>
+    </column>
+    <index id="116" parent="79" name="SYS_C0070129">
+      <ObjectId>249591</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2018-05-04.12:27:55</CreatedTimestamp>
+      <ModifiedTimestamp>2018-05-04.12:27:55</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="117" parent="79" name="SYS_C0070129">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-05-04.12:27:55</ModifiedTimestamp>
+      <ColNames>ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>SYS_C0070129</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="118" parent="80" name="USERID">
+      <Position>1</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="119" parent="80" name="FIRSTNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(50 byte)|0s</DataType>
+    </column>
+    <column id="120" parent="80" name="LASTNAME">
+      <Position>3</Position>
+      <DataType>VARCHAR2(50 byte)|0s</DataType>
+    </column>
+    <column id="121" parent="80" name="EMAIL">
+      <Position>4</Position>
+      <DataType>VARCHAR2(50 byte)|0s</DataType>
+    </column>
+    <column id="122" parent="80" name="DEPARTMENTID">
+      <Position>5</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+    </column>
+    <index id="123" parent="80" name="PKC_USER">
+      <ObjectId>249021</ObjectId>
+      <CreatedTimestamp>2018-04-30.16:03:19</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.16:03:19</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>USERID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="124" parent="80" name="PKC_USER">
+      <ModifiedTimestamp>2018-04-30.16:03:19</ModifiedTimestamp>
+      <ColNames>USERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PKC_USER</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="125" parent="80" name="FKC_USER_DEPARTMENT">
+      <ModifiedTimestamp>2018-04-30.16:03:19</ModifiedTimestamp>
+      <ColNames>DEPARTMENTID</ColNames>
+      <RefSchemaName>TAMARA</RefSchemaName>
+      <RefTableName>DEPARTMENT</RefTableName>
+      <RefKeyName>PKC_DEPARTMENT</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="126" parent="81" name="SUPPLIERID">
+      <Position>1</Position>
+      <DataType>NUMBER(8 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="127" parent="81" name="SUPPLIERNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
+    </column>
+    <column id="128" parent="81" name="CITY">
+      <Position>3</Position>
+      <DataType>VARCHAR2(30 byte)|0s</DataType>
+    </column>
+    <index id="129" parent="81" name="PKC_SUPPLIER">
+      <ObjectId>249024</ObjectId>
+      <CreatedTimestamp>2018-04-30.17:18:41</CreatedTimestamp>
+      <ModifiedTimestamp>2018-04-30.17:18:41</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>SUPPLIERID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="130" parent="81" name="PKC_SUPPLIER">
+      <ModifiedTimestamp>2018-04-30.17:18:41</ModifiedTimestamp>
+      <ColNames>SUPPLIERID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PKC_SUPPLIER</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

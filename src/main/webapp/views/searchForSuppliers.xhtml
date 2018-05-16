@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017 Daimler AG. All rights reserved.
+  ~ Implemented 2017 by DCCS GmbH.
+  -->
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+
+  <p:dialog id="searchSuppliers" header="#{msgs.searchForSuppliers}" modal="true" widgetVar="dlg2"
+            responsive="true" showEffect="fade"
+            hideEffect="fade" width="750">
+    <h:form>
+      <p:accordionPanel multiple="true" dynamic="true" activeIndex="0,1">
+
+        <p:tab title="Search criteria">
+
+          <h:panelGrid id="searchSuppliersPanel" columns="1" cellpadding="10">
+            <h:panelGrid columns="1">
+
+              <h:panelGrid columns="3">
+                <h:panelGroup>
+                  <p:outputLabel value="#{msgs.supplierName}"/>
+                  <br/>
+                  <p:inputText value="#{supplierLookupController.searchSupplierCriteria.supplierName}"/>
+                </h:panelGroup>
+                <h:panelGroup>
+                  <p:outputLabel value="#{msgs.supplierIndex}"/>
+                  <br/>
+                  <p:inputText value="#{supplierLookupController.searchSupplierCriteria.supplierID}"/>
+                </h:panelGroup>
+                <h:panelGroup>
+                  <p:outputLabel value="#{msgs.city}"/>
+                  <br/>
+                  <p:inputText value="#{supplierLookupController.searchSupplierCriteria.city}"/>
+                </h:panelGroup>
+              </h:panelGrid>
+
+              <h:panelGrid columns="2">
+                <p:commandButton value="#{msgs.search}"
+                                 action="#{supplierLookupController.findSuppliers()}"
+                                 process="searchSuppliersPanel"
+                                 update="radioDT"/>
+                <p:commandButton value="#{msgs.reset}"
+                                 action="#{supplierLookupController.reset()}"
+                                 update="searchSuppliersPanel,radioDT"/>
+              </h:panelGrid>
+            </h:panelGrid>
+          </h:panelGrid>
+
+        </p:tab>
+
+        <p:tab title="Suppliers list">
+          <h:panelGrid columns="1" cellpadding="10">
+            <h:panelGroup>
+              <p:dataTable id="radioDT" var="supplier" value="#{supplierLookupController.suppliers}"
+                           selection="#{certificateController.selectedCertificate.supplier}"
+                           rowKey="#{supplier.supplierID}">
+                <p:column id="radioDTcolumn" selectionMode="single" >
+
+                </p:column>
+                <p:column headerText="#{msgs.supplierName}">
+                  <h:outputText value="#{supplier.supplierName}"/>
+                </p:column>
+                <p:column headerText="#{msgs.supplierIndex}">
+                  <h:outputText value="#{supplier.supplierID}"/>
+                </p:column>
+                <p:column headerText="#{msgs.city}">
+                  <h:outputText value="#{supplier.city}"/>
+                </p:column>
+
+              </p:dataTable>
+
+            </h:panelGroup>
+            <h:panelGrid columns="2">
+              <p:commandButton value="#{msgs.select}"
+                               process="radioDT"
+                               update="mainForm:supplier"
+                               onclick="PF('dlg2').hide();">
+                <f:ajax/>
+              </p:commandButton>
+              <p:commandButton value="#{msgs.reset}"/>
+            </h:panelGrid>
+          </h:panelGrid>
+        </p:tab>
+
+      </p:accordionPanel>
+    </h:form>
+
+  </p:dialog>
+
+</ui:composition>

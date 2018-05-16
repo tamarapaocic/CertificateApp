@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017 Daimler AG. All rights reserved.
+  ~ Implemented 2017 by DCCS GmbH.
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:composite="http://java.sun.com/jsf/composite/lookups">
+
+<ui:composition template="../template/template.xhtml">
+
+  <ui:define name="content">
+
+    <composite:lookupSupplier
+        supplierValue="#{certificateController.selectedCertificate.supplier}"
+        supplierSelection="#{certificateController.selectedCertificate.supplier}"
+        form="mainForm:j_id_y:supplier"/>
+
+    <br/>
+
+    <h:panelGrid columns="1" cellpadding="2">
+
+      <h:outputText value="#{msgs.certificateType}"/>
+      <p:selectOneMenu value="#{certificateController.selectedCertificate.certificateType}">
+
+        <f:selectItems value="#{certificateController.allCertificateTypes}"/>
+      </p:selectOneMenu>
+
+      <br/>
+      <p:messages/>
+      <h:outputText value="#{msgs.validFrom}"/>
+      <p:calendar value="#{certificateController.selectedCertificate.validFrom}"
+                  required="false"
+                  requiredMessage="Start date required">
+
+      </p:calendar><br/>
+
+      <br/>
+
+      <h:outputText value="#{msgs.validTo}"/>
+      <p:calendar value="#{certificateController.selectedCertificate.validTo}"
+                  required="false"
+                  requiredMessage="End date required">
+
+      </p:calendar><br/>
+    </h:panelGrid>
+    <br/>
+    <h:outputText value="#{msgs.assignedUsers}"/><br/>
+
+    <p:commandButton value="#{msgs.addParticipant}" onclick="PF('dlg3').show();"/>
+
+    <br/><br/>
+    <p:dataTable id="usersTable"
+                 value="#{certificateController.users}"
+                 var="user" border="1" cellpadding="10" cellspacing="1" style="width: 800px;">
+      <p:column>
+        <f:facet name="header">#{msgs.name}</f:facet>
+        <h:outputText value=" #{user.firstName},  #{user.lastName} (0#{user.department.plant})"/>
+      </p:column>
+      <p:column>
+        <f:facet name="header">#{msgs.department}</f:facet>
+        <h:outputText value="#{user.department.departmentName}"/>
+      </p:column>
+      <p:column>
+        <f:facet name="header">E-mail</f:facet>
+        <h:outputText value="#{user.email}"/>
+      </p:column>
+      <p:column style="width: 40px;">
+        <f:facet name="header"> </f:facet>
+        <p:commandButton icon="fa fa-times"
+                         action="#{certificateController.deleteUserFromCertificate(user)}"
+                         process="@this"
+                         update="usersTable">
+        </p:commandButton>
+      </p:column>
+    </p:dataTable>
+
+    <br/>
+
+    <h:panelGrid columns="2">
+      <p:commandButton value="#{msgs.save}"
+                       action="#{certificateController.saveCertificate()}"/>
+      <p:commandButton value="#{msgs.reset}" action="#{certificateController.reset()}"
+                       update="@form"/>
+    </h:panelGrid>
+
+    <br/>
+    <br/>
+
+    <h:panelGrid id="commentsPanel" columns="1">
+      <h:dataTable id="comments" value="#{certificateController.selectedCertificate.comments}" var="comment">
+        <h:column>
+          <h:outputText value="User: #{comment.user.firstName}"/>
+          <br/>
+          <ui:remove>
+            <p:commandButton icon="fa fa-times"
+                             action="#{certificateController.deleteCommentFromCertificate(comment)}"
+                             process="@this"
+                             update="comments">
+            </p:commandButton> </ui:remove>
+          <h:outputText value="Comment: #{comment.comment}"/>
+        </h:column>
+
+      </h:dataTable>
+
+      <p:commandButton value="#{msgs.newComment}" action="#{certificateController.show}"
+                       rendered="#{!certificateController.visible}" update="commentsPanel">
+        <f:ajax execute="@all" render="commentsPanel"/>
+      </p:commandButton>
+
+
+      <h:panelGroup id="output" rendered="#{certificateController.visible}">
+        <p:panelGrid border="1" cellpadding="10" cellspacing="1" columns="1" id="textbox">
+          <h:panelGroup>
+            <div id="outputName">
+              <h:outputText value="#{sessionHelper.currentUser.firstName} *"/>
+            </div>
+            <br/>
+            <p:inputTextarea id="textarea" value="#{certificateController.commentText}" cols="57" rows="5"/>
+            <br/>
+            <p:commandButton id="sendButton" value="#{msgs.send}" action="#{certificateController.addComment}"
+                             update="commentsPanel">
+              <f:ajax execute="@all" render="commentsPanel"/>
+
+            </p:commandButton>
+          </h:panelGroup>
+        </p:panelGrid>
+      </h:panelGroup>
+    </h:panelGrid>
+  </ui:define>
+
+
+  <ui:define name="dialogs">
+    <ui:include src="/views/searchForUsers.xhtml"/>
+  </ui:define>
+
+
+</ui:composition>
+</html>

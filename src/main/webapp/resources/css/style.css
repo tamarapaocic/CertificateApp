@@ -1,0 +1,143 @@
+.alignTop td {
+  vertical-align: top;
+}
+
+.error {
+  color: red;
+}
+
+.title {
+  margin: 8px;
+}
+
+.ui-inputfield {
+  width: 195px;
+}
+
+.ui-inputfield.ui-inputtextarea {
+  width: 470px;
+}
+
+#mainTitle {
+  color: #007290;
+  font-family: Broadway;
+}
+
+.ui-state-default.ui-selection-column {
+  width: 16px;
+  text-align: center
+}
+
+.ui-datatable table {
+  border-collapse: separate !important;
+
+}
+
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td, .ui-datatable tfoot th {
+  padding: 8px 10px !important;
+
+}
+
+/*.ui-widget-content {*/
+/*border: 1px solid #a8a8a8;*/
+/*background: #f8fdff;*/
+/*color: #4f4f4f;*/
+/*}*/
+
+.ui-button-text {
+  background:#00e7be -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0)));
+}
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+  background: #00e7be -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0)));
+
+}
+
+#outputName {
+  margin-top: 12px;
+  margin-bottom: 0px;
+  margin-left: 10px;
+}
+
+.ui-state-hover {
+  background-color: #00ffc4;
+}
+
+#textarea {
+  margin-top: 0px;
+}
+
+#sendButton {
+  margin: 10px !important;
+}
+
+.ui-selectonemenu .ui-selectonemenu-trigger {
+  background: #00ffc4 -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.8)), to(rgba(255, 255, 255, 0)));
+}
+
+.ui-button-text-only .ui-button-text {
+  padding: .3em 1em;
+  font-size: 15px;
+  width: 170px;
+  height: 22px;
+  margin-top: 2px;
+}
+
+#certificateTable {
+  border: 1px solid #CCC;
+  border-collapse: separate !important;
+}
+
+#certificateTable.td {
+  border: none;
+}
+
+.selectUser.ui-selectonemenu {
+  width: 140px;
+}
+
+.selectLanguage.ui-selectonemenu {
+  width: 140px;
+}
+
+.menu.ui-menu {
+  width: 13.75em;
+}
+
+.layoutFullpage {
+  background-color: aliceblue;
+}
+
+.north {
+  background-color: aliceblue;
+}
+
+.northPanelGroup {
+  display: inline-block;
+}
+
+.northPanelGroup h1 {
+  margin: 9px;
+}
+
+.northPanelGroup2 {
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  height: 40px;
+}
+
+.west {
+  height: 580px;
+  overflow: hidden;
+  background-color: aliceblue;
+}
+
+.center {
+  background-color: aliceblue;
+}
+
+.east {
+  width: 0px;
+  display: none;
+}

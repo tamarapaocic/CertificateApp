@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017 Daimler AG. All rights reserved.
+  ~ Implemented 2017 by DCCS GmbH.
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:composite="http://java.sun.com/jsf/composite/lookups">
+
+<ui:composition template="../template/template.xhtml">
+
+  <ui:define name="content">
+
+    <composite:lookupUser
+    users="#{testLookupsController.users}"
+    usersSelection="#{testLookupsController.users}"
+    form="@form"
+        />
+
+  </ui:define>
+
+</ui:composition>
+</html>
