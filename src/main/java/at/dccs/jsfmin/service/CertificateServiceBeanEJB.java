@@ -35,18 +35,6 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
    */
   @Override
   public void deleteCertificate(Certificate certificate) {
-    CriteriaBuilder cb = entityManager_.getCriteriaBuilder();
-    CriteriaQuery<CertificateUser> q = cb.createQuery(CertificateUser.class);
-    Root<CertificateUser> c = q.from(CertificateUser.class);
-    q.select(c);
-    q.where(cb.equal(c.get("certificate_").get("certificateID_"), certificate.getCertificateID()));
-
-    List<CertificateUser> certificateUsersToRemove = entityManager_.createQuery(q).getResultList();
-    for (CertificateUser cu : certificateUsersToRemove) {
-      entityManager_.remove(cu);
-    }
-
-    deleteCommentsFromCertificate(certificate);
 
     entityManager_.remove(entityManager_.find(Certificate.class, certificate.getCertificateID()));
   }
@@ -89,16 +77,16 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
         Comment newComment = selectedCertificate.getComments().get(i);
         newComment.setCertificate(current);
         entityManager_.persist(newComment);
-         entityManager_.flush();
+        entityManager_.flush();
         current.getComments().add(newComment);
       }
 
       current.setUsers(new ArrayList<User>());
-      for(CertificateUser cu: current.getCertificateUserList()){
+      for (CertificateUser cu : current.getCertificateUserList()) {
         current.getUsers().add(cu.getUser());
       }
 
-       selectedCertificate.getUsers().removeAll(current.getUsers());
+      selectedCertificate.getUsers().removeAll(current.getUsers());
 
       if (users != null) {
         addUsersToCertificate(current, users);
@@ -163,18 +151,6 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
     return tq.getResultList();
   }
 
-  private void deleteCommentsFromCertificate(Certificate certificate) {
-    CriteriaBuilder cb = entityManager_.getCriteriaBuilder();
-    CriteriaQuery<Comment> q2 = cb.createQuery(Comment.class);
-    Root<Comment> cm = q2.from(Comment.class);
-    q2.select(cm);
-    q2.where(cb.equal(cm.get("certificate_").get("certificateID_"), certificate.getCertificateID()));
-
-    List<Comment> commentsToRemove = entityManager_.createQuery(q2).getResultList();
-    for (Comment comment : commentsToRemove) {
-      entityManager_.remove(comment);
-    }
-  }
 
   @Override
   public List<String> getAllCertificateTypes() {
@@ -183,7 +159,7 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
 
   }
 
-  public Certificate getCertificateDataById(Integer certificateID) {
+  public Certificate getCertificate(Integer certificateID) {
     return entityManager_.find(Certificate.class, certificateID);
   }
 }

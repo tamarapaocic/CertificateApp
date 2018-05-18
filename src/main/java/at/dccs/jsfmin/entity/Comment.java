@@ -24,11 +24,11 @@ public class Comment implements Serializable {
   @Column(name = "commentID", length = 8)
   private Integer commentID_;
 
-  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "participantID")
   private User user_;
 
-  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "certificateID")
   private Certificate certificate_;
 
