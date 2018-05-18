@@ -54,6 +54,7 @@ public class Certificate {
   @OneToMany(mappedBy = "certificate_",cascade = CascadeType.ALL)
   private List<CertificateUser> certificateUserList_;
 
+  private List<User> users_;
 
   public Certificate() {
   }
@@ -72,6 +73,17 @@ public class Certificate {
     this.validTo_ = validTo_;
   }
 
+  public void setCertificateUserList(List<CertificateUser> certificateUserList) {
+    certificateUserList_ = certificateUserList;
+  }
+
+  public List<User> getUsers() {
+    return users_;
+  }
+
+  public void setUsers(List<User> users) {
+    users_ = users;
+  }
 
   public List<Comment> getComments() {
     return comments_;

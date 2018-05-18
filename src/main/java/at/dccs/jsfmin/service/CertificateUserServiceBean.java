@@ -11,7 +11,6 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import at.dccs.jsfmin.api.CertificateService;
-import at.dccs.jsfmin.api.CertificateUserService;
 import at.dccs.jsfmin.api.UserService;
 import at.dccs.jsfmin.entity.Certificate;
 import at.dccs.jsfmin.entity.CertificateUser;
@@ -20,7 +19,7 @@ import at.dccs.jsfmin.entity.User;
 @Named
 @ApplicationScoped
 @Alternative
-public class CertificateUserServiceBean implements Serializable, CertificateUserService {
+public class CertificateUserServiceBean implements Serializable {
 
   private List<CertificateUser> certificateUserList_;
 

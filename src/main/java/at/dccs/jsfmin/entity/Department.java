@@ -19,11 +19,11 @@ public class Department {
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "departmentSequence")
-  @Column(name="departmentID",length = 8)
+  @Column(name = "departmentID", length = 8)
   private Integer departmentID_;
 
   @Basic
-  @Column(name = "departmentName",length = 50)
+  @Column(name = "departmentName", length = 50)
   private String departmentName_;
 
   @Basic

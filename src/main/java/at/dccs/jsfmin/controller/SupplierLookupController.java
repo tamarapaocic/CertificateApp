@@ -21,22 +21,34 @@ public class SupplierLookupController implements Serializable {
 
   private SearchSupplierCriteria searchSupplierCriteria_;
 
-  private List<Supplier> suppliers_;
-
   private Supplier supplier_;
-
-  public Supplier getSupplier() {
-    return supplier_;
-  }
-
-  public void setSupplier(Supplier supplier) {
-    supplier_ = supplier;
-  }
 
   @PostConstruct
   public void init() {
-    suppliers_ = supplierService_.getAllSuppliers();
     searchSupplierCriteria_ = new SearchSupplierCriteria();
+  }
+
+  /**
+   * Method for calling supplier service method which retrieves all suppliers from database.
+   *
+   * @return List of suppliers
+   */
+  public List<Supplier> getAllSuppliers() {
+    return supplierService_.getAllSuppliers();
+  }
+
+  /**
+   * Method for calling supplier service method and passing it search criteria based on which
+   * suppliers from database will be retrieved.
+   */
+  public void findSuppliers() {
+    supplierService_.findSuppliers(searchSupplierCriteria_);
+  }
+
+  public void reset() {
+    searchSupplierCriteria_.setCity(null);
+    searchSupplierCriteria_.setSupplierID(null);
+    searchSupplierCriteria_.setSupplierName(null);
   }
 
   public SearchSupplierCriteria getSearchSupplierCriteria() {
@@ -47,21 +59,12 @@ public class SupplierLookupController implements Serializable {
     searchSupplierCriteria_ = searchSupplierCriteria;
   }
 
-  public void findSuppliers() {
-    suppliers_ = supplierService_.findSuppliers(searchSupplierCriteria_);
+  public Supplier getSupplier() {
+    return supplier_;
   }
 
-  public void reset() {
-    searchSupplierCriteria_.setCity(null);
-    searchSupplierCriteria_.setSupplierID(null);
-    searchSupplierCriteria_.setSupplierName(null);
+  public void setSupplier(Supplier supplier) {
+    supplier_ = supplier;
   }
 
-  public List<Supplier> getSuppliers() {
-    return suppliers_;
-  }
-
-  public void setSuppliers(List<Supplier> suppliers) {
-    suppliers_ = suppliers;
-  }
 }

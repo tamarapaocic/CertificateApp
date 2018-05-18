@@ -13,21 +13,21 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@SequenceGenerator(name="supplierSequence",sequenceName = "supplier_seq",allocationSize = 1)
-@Table(schema = "TAMARA",name="Supplier")
+@SequenceGenerator(name = "supplierSequence", sequenceName = "supplier_seq", allocationSize = 1)
+@Table(schema = "TAMARA", name = "Supplier")
 public class Supplier {
 
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "supplierSequence")
-  @Column(name="supplierID",length = 8)
+  @Column(name = "supplierID", length = 8)
   private Integer supplierID_;
 
   @Basic
-  @Column(name="supplierName",length = 40)
+  @Column(name = "supplierName", length = 40)
   private String supplierName_;
 
   @Basic
-  @Column(name="city",length = 30)
+  @Column(name = "city", length = 30)
   private String city_;
 
   @OneToMany(mappedBy = "supplier_")
@@ -83,12 +83,12 @@ public class Supplier {
       return false;
     }
     Supplier supplier = (Supplier) o;
-    return supplierID_.equals( supplier.supplierID_) && supplierName_.equals(
-            supplier.supplierName_) && city_.equals( supplier.city_);
+    return supplierID_.equals(supplier.supplierID_) && supplierName_.equals(supplier.supplierName_) && city_.equals
+            (supplier.city_);
   }
 
-//  @Override
-//  public int hashCode() {
-//    return supplierID_.hashCode()+supplierName_.hashCode();
-//  }
+  @Override
+  public int hashCode() {
+    return supplierID_.hashCode() + supplierName_.hashCode();
+  }
 }

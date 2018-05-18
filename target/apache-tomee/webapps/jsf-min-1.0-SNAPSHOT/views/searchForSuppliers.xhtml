@@ -58,9 +58,9 @@
           <h:panelGrid columns="1" cellpadding="10">
             <h:panelGroup>
               <p:dataTable id="radioDT" var="supplier" value="#{supplierLookupController.suppliers}"
-                           selection="#{certificateController.selectedCertificate.supplier}"
+                           selection="#{certificateFormController.selectedCertificate.supplier}"
                            rowKey="#{supplier.supplierID}">
-                <p:column id="radioDTcolumn" selectionMode="single" >
+                <p:column id="radioDTcolumn" selectionMode="single">
 
                 </p:column>
                 <p:column headerText="#{msgs.supplierName}">

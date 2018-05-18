@@ -26,6 +26,10 @@ public class TestLookupsController implements Serializable {
     supplier_ = supplier;
   }
 
+  public void resetSupplier() {
+    supplier_ = null;
+  }
+
   public List<User> getUsers() {
     return users_;
   }
@@ -34,7 +38,7 @@ public class TestLookupsController implements Serializable {
     users_ = users;
   }
 
-  public void deleteUser(User user){
+  public void deleteUser(User user) {
     users_.remove(user);
   }
 }

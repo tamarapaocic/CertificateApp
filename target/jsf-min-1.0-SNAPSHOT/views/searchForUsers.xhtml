@@ -28,17 +28,17 @@
                 <h:panelGroup>
                   <p:outputLabel value="#{msgs.firstName}"/>
                   <br/>
-                  <p:inputText value="#{userController.searchUserCriteria.firstName}"/>
+                  <p:inputText value="#{userLookupController.searchUserCriteria.firstName}"/>
                 </h:panelGroup>
                 <h:panelGroup>
                   <p:outputLabel value="#{msgs.lastName}"/>
                   <br/>
-                  <p:inputText value="#{userController.searchUserCriteria.lastName}"/>
+                  <p:inputText value="#{userLookupController.searchUserCriteria.lastName}"/>
                 </h:panelGroup>
                 <h:panelGroup>
                   <p:outputLabel value="#{msgs.userId}"/>
                   <br/>
-                  <p:inputText value="#{userController.searchUserCriteria.userID}"/>
+                  <p:inputText value="#{userLookupController.searchUserCriteria.userID}"/>
                 </h:panelGroup>
               </h:panelGrid>
 
@@ -46,22 +46,22 @@
                 <h:panelGroup>
                   <p:outputLabel value="#{msgs.department}"/>
                   <br/>
-                  <p:inputText value="#{userController.searchUserCriteria.department.departmentName}"/>
+                  <p:inputText value="#{userLookupController.searchUserCriteria.department.departmentName}"/>
                 </h:panelGroup>
                 <h:panelGroup>
                   <p:outputLabel value="#{msgs.plant}"/>
                   <br/>
-                  <p:inputText value="#{userController.searchUserCriteria.department.plant}"/>
+                  <p:inputText value="#{userLookupController.searchUserCriteria.department.plant}"/>
                 </h:panelGroup>
               </h:panelGrid>
 
               <h:panelGrid columns="2">
                 <p:commandButton value="#{msgs.search}"
-                                 action="#{userController.findUsers()}"
+                                 action="#{userLookupController.findUsers()}"
                                  process="searchUsersPanel"
                                  update="@form"/>
                 <p:commandButton value="#{msgs.reset}"
-                                 action="#{userController.reset()}"
+                                 action="#{userLookupController.reset()}"
                                  update="searchUsersPanel checkboxDT"/>
               </h:panelGrid>
             </h:panelGrid>
@@ -70,8 +70,8 @@
         <p:tab title="Users list">
           <h:panelGrid columns="1" cellpadding="10">
             <h:panelGroup>
-              <p:dataTable id="checkboxDT" var="user" value="#{userController.users}"
-                           selection="#{certificateController.users}"
+              <p:dataTable id="checkboxDT" var="user" value="#{userLookupController.getAllUsers()}"
+                           selection="#{certificateFormController.selectedCertificate.users}"
                            rowKey="#{user.userID}"
                            style="margin-bottom:0">
                 <p:column selectionMode="multiple">

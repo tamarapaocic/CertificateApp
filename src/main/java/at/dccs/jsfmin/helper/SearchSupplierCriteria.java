@@ -12,12 +12,6 @@ public class SearchSupplierCriteria implements Serializable {
   public SearchSupplierCriteria() {
   }
 
-  public SearchSupplierCriteria(Integer supplierID, String supplierName, String city) {
-    supplierID_ = supplierID;
-    supplierName_ = supplierName;
-    city_ = city;
-  }
-
   public Integer getSupplierID() {
     return supplierID_;
   }

@@ -11,11 +11,11 @@
 
   <ui:define name="content">
 
-    <composite:lookupUser
-    users="#{testLookupsController.users}"
-    usersSelection="#{testLookupsController.users}"
-    form="@form"
-        />
+    <composite:userLookup
+        users="#{testLookupsController.users}"
+        usersSelection="#{testLookupsController.users}"
+        form="@form"
+    />
 
   </ui:define>
 

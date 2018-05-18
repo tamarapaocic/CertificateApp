@@ -24,6 +24,7 @@ import at.dccs.jsfmin.helper.IdProducer;
 @ApplicationScoped
 @Alternative
 public class CertificateServiceBean implements Serializable, CertificateService {
+
   private List<Certificate> certificates_;
   private List<String> certificateTypes_;
 
@@ -84,10 +85,6 @@ public class CertificateServiceBean implements Serializable, CertificateService 
     }
   }
 
-  @Override
-  public void updateCertificate(Certificate selectedCertificate, List<User> users) {
-
-  }
 
   public Certificate getCertificateById(Integer certificateID) {
     Certificate result = new Certificate();

@@ -9,13 +9,12 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Named;
 
-import at.dccs.jsfmin.api.CommentService;
 import at.dccs.jsfmin.entity.Comment;
 
 @Named
 @ApplicationScoped
 @Alternative
-public class CommentServiceBean implements Serializable, CommentService {
+public class CommentServiceBean implements Serializable {
 
   private List<Comment> savedComments_;
 

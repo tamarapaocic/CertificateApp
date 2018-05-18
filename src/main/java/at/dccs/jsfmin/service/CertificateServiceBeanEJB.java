@@ -28,13 +28,17 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
   private EntityManager entityManager_;
 
 
+  /**
+   * Method for deleting certificate from database
+   *
+   * @param certificate selected certificate
+   */
   @Override
   public void deleteCertificate(Certificate certificate) {
     CriteriaBuilder cb = entityManager_.getCriteriaBuilder();
     CriteriaQuery<CertificateUser> q = cb.createQuery(CertificateUser.class);
     Root<CertificateUser> c = q.from(CertificateUser.class);
     q.select(c);
-    ParameterExpression<Integer> p = cb.parameter(Integer.class);
     q.where(cb.equal(c.get("certificate_").get("certificateID_"), certificate.getCertificateID()));
 
     List<CertificateUser> certificateUsersToRemove = entityManager_.createQuery(q).getResultList();
@@ -47,60 +51,67 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
     entityManager_.remove(entityManager_.find(Certificate.class, certificate.getCertificateID()));
   }
 
-  private void deleteCommentsFromCertificate(Certificate certificate){
-    CriteriaBuilder cb = entityManager_.getCriteriaBuilder();
-    CriteriaQuery<Comment> q2 = cb.createQuery(Comment.class);
-    Root<Comment> cm = q2.from(Comment.class);
-    q2.select(cm);
-    ParameterExpression<Integer> p2 = cb.parameter(Integer.class);
-    q2.where(cb.equal(cm.get("certificate_").get("certificateID_"), certificate.getCertificateID()));
 
-    List<Comment> commentsToRemove = entityManager_.createQuery(q2).getResultList();
-    for (Comment comment : commentsToRemove) {
-      entityManager_.remove(comment);
-    }
-  }
-
-
+  /**
+   * Method for updating live version of selected certificate in database
+   *
+   * @param selectedCertificate detached certificate
+   */
   @Override
-  public void updateCertificate(Certificate selected, List<User> users) {
-    if (selected.getCertificateID() == null) {
-      entityManager_.persist(selected);
+  public void updateCertificate(Certificate selectedCertificate) {
+    List<User> users = selectedCertificate.getUsers();
+    if (selectedCertificate.getCertificateID() == null) {
+      entityManager_.persist(selectedCertificate);
       if (users != null) {
-        addUsersToCertificate(selected, users);
+        addUsersToCertificate(selectedCertificate, users);
       }
-      for (Comment comment : selected.getComments()) {
-        comment.setCertificate(selected);
+      if (selectedCertificate.getComments() != null) {
+        for (Comment comment : selectedCertificate.getComments()) {
+          comment.setCertificate(selectedCertificate);
+        }
       }
     } else {
 
-      Integer id = selected.getCertificateID();
+      Integer id = selectedCertificate.getCertificateID();
 
       Certificate current = entityManager_.find(Certificate.class, id);
-      current.setValidTo(selected.getValidTo());
-      current.setValidFrom(selected.getValidFrom());
-      current.setCertificateType(selected.getCertificateType());
+      current.setValidTo(selectedCertificate.getValidTo());
+      current.setValidFrom(selectedCertificate.getValidFrom());
+      current.setCertificateType(selectedCertificate.getCertificateType());
 
-      if (selected.getSupplier() != null) {
-        Supplier supplier = entityManager_.find(Supplier.class, selected.getSupplier().getSupplierID());
+      if (selectedCertificate.getSupplier() != null) {
+        Supplier supplier = entityManager_.find(Supplier.class, selectedCertificate.getSupplier().getSupplierID());
         current.setSupplier(supplier);
       }
 
-      for (CertificateUser cu : current.getCertificateUserList()) {
-        entityManager_.remove(cu);
-      }
 
-      addUsersToCertificate(current, users);
-
-      for (int i = current.getComments().size(); i < selected.getComments().size(); i++) {
-        Comment newComment = selected.getComments().get(i);
+      for (int i = current.getComments().size(); i < selectedCertificate.getComments().size(); i++) {
+        Comment newComment = selectedCertificate.getComments().get(i);
         newComment.setCertificate(current);
         entityManager_.persist(newComment);
-        entityManager_.flush();
+         entityManager_.flush();
+        current.getComments().add(newComment);
+      }
+
+      current.setUsers(new ArrayList<User>());
+      for(CertificateUser cu: current.getCertificateUserList()){
+        current.getUsers().add(cu.getUser());
+      }
+
+       selectedCertificate.getUsers().removeAll(current.getUsers());
+
+      if (users != null) {
+        addUsersToCertificate(current, users);
       }
     }
   }
 
+  /**
+   * Method for assigning chosen users on certificate.
+   *
+   * @param certificate selected certificate
+   * @param users       list of users who need to be assigned on certificate
+   */
   private void addUsersToCertificate(Certificate certificate, List<User> users) {
     for (User user : users) {
       CertificateUser certificateUser = new CertificateUser();
@@ -110,13 +121,38 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
     }
   }
 
-
+  /**
+   * Method for retrieving certificate from database
+   * and getting assigned users and comments of that certificate.
+   *
+   * @param certificateID ID of selected certificate
+   * @return certificate object
+   */
   @Override
   public Certificate getCertificateById(Integer certificateID) {
-    return entityManager_.find(Certificate.class, certificateID);
+    Certificate certificate = entityManager_.find(Certificate.class, certificateID);
+    List<Comment> comments;
+    comments = certificate.getComments();
+    for (Comment comment : comments) {
+      comment.getUser();
+    }
+    List<User> users = new ArrayList<User>();
+
+    List<CertificateUser> certificateUsers;
+    certificateUsers = certificate.getCertificateUserList();
+    for (CertificateUser cu : certificateUsers) {
+      users.add(cu.getUser());
+    }
+    certificate.setUsers(users);
+    return certificate;
   }
 
 
+  /**
+   * Method for retrieving all certificates from database
+   *
+   * @return list of certificates
+   */
   @Override
   public List<Certificate> getAllCertificates() {
     CriteriaBuilder cb = entityManager_.getCriteriaBuilder();
@@ -127,6 +163,19 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
     return tq.getResultList();
   }
 
+  private void deleteCommentsFromCertificate(Certificate certificate) {
+    CriteriaBuilder cb = entityManager_.getCriteriaBuilder();
+    CriteriaQuery<Comment> q2 = cb.createQuery(Comment.class);
+    Root<Comment> cm = q2.from(Comment.class);
+    q2.select(cm);
+    q2.where(cb.equal(cm.get("certificate_").get("certificateID_"), certificate.getCertificateID()));
+
+    List<Comment> commentsToRemove = entityManager_.createQuery(q2).getResultList();
+    for (Comment comment : commentsToRemove) {
+      entityManager_.remove(comment);
+    }
+  }
+
   @Override
   public List<String> getAllCertificateTypes() {
     String query = "SELECT DISTINCT e.certificateType_ FROM Certificate e ORDER BY e.certificateType_";
@@ -134,5 +183,7 @@ public class CertificateServiceBeanEJB implements Serializable, CertificateServi
 
   }
 
-
+  public Certificate getCertificateDataById(Integer certificateID) {
+    return entityManager_.find(Certificate.class, certificateID);
+  }
 }

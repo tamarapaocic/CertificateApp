@@ -11,7 +11,7 @@ public interface CertificateService extends Serializable {
 
   void deleteCertificate(Certificate certificate);
 
-  void updateCertificate(Certificate selectedCertificate, List<User> users);
+  void updateCertificate(Certificate selectedCertificate);
 
   Certificate getCertificateById(Integer certificateID);
 

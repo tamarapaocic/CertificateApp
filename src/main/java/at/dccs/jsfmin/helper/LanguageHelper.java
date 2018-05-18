@@ -19,16 +19,16 @@ public class LanguageHelper implements Serializable {
 
   private String localeCode_;
   private Locale locale_ = FacesContext.getCurrentInstance().getViewRoot().getLocale();
-  private static Map<String, Object> countries_;
+  private static Map<String, Object> languages_;
 
   static {
-    countries_ = new LinkedHashMap<String, Object>();
-    countries_.put("English", Locale.ENGLISH);
-    countries_.put("German", Locale.GERMAN);
+    languages_ = new LinkedHashMap<String, Object>();
+    languages_.put("English", Locale.ENGLISH);
+    languages_.put("German", Locale.GERMAN);
   }
 
-  public Map<String, Object> getCountriesInMap() {
-    return countries_;
+  public Map<String, Object> getLanguagesInMap() {
+    return languages_;
   }
 
   public String getLocaleCode() {
@@ -44,12 +44,12 @@ public class LanguageHelper implements Serializable {
   }
 
   //value change event listener
-  public String countryLocaleCodeChanged(ValueChangeEvent e) {
+  public String languageLocaleCodeChanged(ValueChangeEvent e) {
 
     String newLocaleValue = e.getNewValue().toString();
 
     //loop country map to compare the locale code
-    for (Map.Entry<String, Object> entry : countries_.entrySet()) {
+    for (Map.Entry<String, Object> entry : languages_.entrySet()) {
 
       if (entry.getValue().toString().equals(newLocaleValue)) {
 

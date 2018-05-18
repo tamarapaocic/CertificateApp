@@ -11,10 +11,11 @@
 
   <ui:define name="content">
 
-    <composite:lookupSupplier
+    <composite:supplierLookup
         supplierValue="#{testLookupsController.supplier}"
         supplierSelection="#{testLookupsController.supplier}"
-        form="mainForm:j_id_y:supplier"/>
+        form="mainForm:j_id_y:supplier"
+        reset="#{testLookupsController.resetSupplier}"/>
 
   </ui:define>
 

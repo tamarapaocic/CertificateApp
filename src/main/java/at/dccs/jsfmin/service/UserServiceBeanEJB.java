@@ -24,6 +24,11 @@ public class UserServiceBeanEJB implements Serializable, UserService {
   @PersistenceContext
   private EntityManager entityManager_;
 
+  /**
+   * Method for retrieving all users from database
+   *
+   * @return list of users
+   */
   @Override
   public List<User> getAllUsers() {
     CriteriaBuilder cb = entityManager_.getCriteriaBuilder();
@@ -35,13 +40,23 @@ public class UserServiceBeanEJB implements Serializable, UserService {
     return tq.getResultList();
   }
 
-
+  /**
+   * Method for finding user from database based on user ID.
+   *
+   * @param userID ID of user to be find
+   * @return user
+   */
   @Override
-  public User findUser(int userId) {
-    return entityManager_.find(User.class, userId);
+  public User findUser(int userID) {
+    return entityManager_.find(User.class, userID);
   }
 
-
+  /**
+   * Method for finding users from database based on search criteria
+   *
+   * @param formCriteria search criteria
+   * @return list of users
+   */
   @Override
   public List<User> findUsers(SearchUserCriteria formCriteria) {
 

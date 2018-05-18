@@ -31,6 +31,7 @@ public class CertificateUser {
   }
 
   public User getUser() {
+    certificateUserID_.getUserID();
     return user_;
   }
 
@@ -53,26 +54,6 @@ public class CertificateUser {
   public void setCertificateUserID(CertificateUserId certificateUserID) {
     certificateUserID_ = certificateUserID;
   }
-
-//  @Override
-//  public boolean equals(Object o) {
-//    if (this == o) {
-//      return true;
-//    }
-//    if (o == null || getClass() != o.getClass()) {
-//      return false;
-//    }
-//    CertificateUser that = (CertificateUser) o;
-//    return user_.equals(that.user_) && certificate_.equals(that.certificate_);
-//  }
-//
-//  @Override
-//  public int hashCode() {
-//    int result = 17;
-//    result = 31 * result + user_.hashCode();
-//    result = 31 * result + certificate_.hashCode();
-//    return result;
-//  }
 
 
 }

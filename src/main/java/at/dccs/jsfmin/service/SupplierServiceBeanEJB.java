@@ -24,6 +24,11 @@ public class SupplierServiceBeanEJB implements Serializable, SupplierService {
   @PersistenceContext
   private EntityManager entityManager_;
 
+  /**
+   * Method for retrieving all suppliers from database
+   *
+   * @return list of suppliers
+   */
   @Override
   public List<Supplier> getAllSuppliers() {
     CriteriaBuilder cb = entityManager_.getCriteriaBuilder();
@@ -35,12 +40,23 @@ public class SupplierServiceBeanEJB implements Serializable, SupplierService {
     return tq.getResultList();
   }
 
+  /**
+   * Method for finding supplier from database based on supplier ID.
+   *
+   * @param supplierID ID of supplier to be find
+   * @return user
+   */
   @Override
-  public Supplier findSupplier(int supplierId) {
-    return entityManager_.find(Supplier.class, supplierId);
+  public Supplier findSupplier(int supplierID) {
+    return entityManager_.find(Supplier.class, supplierID);
   }
 
-
+  /**
+   * Method for finding suppliers from database based on search criteria
+   *
+   * @param formCriteria search criteria
+   * @return list of suppliers
+   */
   @Override
   public List<Supplier> findSuppliers(SearchSupplierCriteria formCriteria) {
     CriteriaBuilder cb = entityManager_.getCriteriaBuilder();

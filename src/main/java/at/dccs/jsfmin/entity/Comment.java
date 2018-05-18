@@ -28,7 +28,7 @@ public class Comment implements Serializable {
   @JoinColumn(name = "participantID")
   private User user_;
 
-  @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+  @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @JoinColumn(name = "certificateID")
   private Certificate certificate_;
 

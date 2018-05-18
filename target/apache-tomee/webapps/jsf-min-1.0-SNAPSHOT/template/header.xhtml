@@ -17,7 +17,7 @@
                      value="#{sessionHelper.currentUser}"
                      converter="#{userConverter}">
       <f:ajax/>
-      <f:selectItems value="#{userController.getAllUsers()}" var="user"
+      <f:selectItems value="#{userLookupController.getAllUsers()}" var="user"
                      itemValue="#{user}"
                      itemLabel="#{user.firstName}"/>
     </p:selectOneMenu>
@@ -26,8 +26,8 @@
     <p:selectOneMenu styleClass="selectLanguage"
                      value="#{languageHelper.localeCode}"
                      onchange="submit()"
-                     valueChangeListener="#{languageHelper.countryLocaleCodeChanged}">
-      <f:selectItems value="#{languageHelper.countriesInMap}"/>
+                     valueChangeListener="#{languageHelper.languageLocaleCodeChanged}">
+      <f:selectItems value="#{languageHelper.languagesInMap}"/>
     </p:selectOneMenu>
   </h:panelGrid>
 

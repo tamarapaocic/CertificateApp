@@ -6,9 +6,9 @@
     </root>
     <schema id="2" parent="1" name="TAMARA">
       <ObjectId>189</ObjectId>
-      <IntrospectionTimestamp>2018-05-16.14:22:29</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-05-17.17:42:33</IntrospectionTimestamp>
       <CreatedTimestamp>2018-04-30.14:34:20</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-16.14:22:24</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-05-17.15:41:00</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -217,7 +217,7 @@
     <sequence id="69" parent="2" name="CERTIFICATE_SEQ">
       <ObjectId>249028</ObjectId>
       <CreatedTimestamp>2018-04-30.18:14:18</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-16.13:55:16</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-05-17.15:41:00</ModifiedTimestamp>
       <SequenceIdentity>1..99999999</SequenceIdentity>
       <CacheSize>-2147483648</CacheSize>
     </sequence>

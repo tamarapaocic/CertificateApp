@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2017 Daimler AG. All rights reserved.
+  ~ Implemented 2017 by DCCS GmbH.
+  -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../template/template.xhtml">
+
+  <ui:define name="content">
+
+    <h3 class="title">#{msgs.example1}</h3>
+    <p:commandButton value="#{msgs.newCertificate}"
+                     action="#{certificatesOverviewController.makeNewCertificate}"/>
+    <br/><br/>
+    <p:dataTable value="#{certificatesOverviewController.getAllCertificates()}" var="certificate"
+                 border="1" cellpadding="10" cellspacing="1" id="certificateTable"
+                 style="width: 900px;  " styleClass="mystyle">
+
+      <p:column style="width: 40px; ">
+        <f:facet name="header"/>
+        <p:menuButton icon="fa fa-gear" type="button">
+          <p:menuitem value="#{msgs.edit}"
+                      action="#{certificatesOverviewController.editCertificate(certificate)}"
+                      process="@this"/>
+          <p:menuitem value="#{msgs.delete}"
+                      action="#{certificatesOverviewController.deleteCertificate(certificate)}"
+                      process="@this"
+                      update="mainForm:certificateTable"/>
+        </p:menuButton>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">#{msgs.supplier}</f:facet>
+        <h:outputText value="#{certificate.supplier.supplierName}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">#{msgs.certificateType}</f:facet>
+        <h:outputText value="#{certificate.certificateType}"/>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">#{msgs.validFrom}</f:facet>
+        <h:outputText value="#{certificate.validFrom}">
+          <f:convertDateTime pattern="dd.MM.yyyy"/>
+        </h:outputText>
+      </p:column>
+
+      <p:column>
+        <f:facet name="header">#{msgs.validTo}</f:facet>
+        <h:outputText value="#{certificate.validTo}">
+          <f:convertDateTime pattern="dd.MM.yyyy"/>
+        </h:outputText>
+      </p:column>
+    </p:dataTable>
+
+  </ui:define>
+</ui:composition>
+</html>
